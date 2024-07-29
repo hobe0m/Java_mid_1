@@ -20,7 +20,10 @@ public class TestCalendarPrinter {
         LocalDate firstDayOfMonth = LocalDate.of(year, month, 1);
         LocalDate firstDayOfNextMonth = firstDayOfMonth.plusMonths(1);
 
-        // 월요일 : 1 (1 % 7 = 1) ... 일요일 : 7 (7 % 7 = 0)
+        // 요일을 구하고 숫자로 치환한 뒤에 7로 나눈 나머지 값(0~6)으로 요일을 구분한다.
+        // 월 : 1, 일 : 0 이런 식이다.
+        // 해당 월의 첫 번째 날이 무슨 요일인 지 알고 띄워서 입력해야 하기 때문에 사용한다.
+        // 이 값만큼 띄워서 입력한다고 생각하면 된다.
         int offsetWeekDays = firstDayOfMonth.getDayOfWeek().getValue() % 7;
 
         System.out.println("Su Mo Tu We Th Fr Sa");
@@ -31,6 +34,8 @@ public class TestCalendarPrinter {
 
         LocalDate dayIterator = firstDayOfMonth;
         while (dayIterator.isBefore(firstDayOfNextMonth)) {
+            // %2d 를 통해 간격을 맞춘다.
+            // 두 칸을 차지하지만 한 자리 수라면 오른쪽에 쓰여진다.
             System.out.printf("%2d ", dayIterator.getDayOfMonth());
             if (dayIterator.getDayOfWeek() == DayOfWeek.SATURDAY) {
                 System.out.println();
