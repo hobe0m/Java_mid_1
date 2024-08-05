@@ -8,11 +8,14 @@ public class Car {
     private int chargeLevel;
 
     // 엔진
+    // 자신의 엔진을 생성하고, 엔징을 사용해 자동차의 기능을 수행할 수 있게끔 하기 위해 존재
     private Engine engine;
 
     public Car(String model, int chargeLevel) {
         this.model = model;
         this.chargeLevel = chargeLevel;
+        // Engine 생성 시 Car 인스턴스가 필요하므로 this를 매개 변수로 넣는다.
+        // 따라서 매개변수의 this와 this.engine의 this는 같은 Car 인스턴스를 가리킨다.
         this.engine = new Engine(this);
     }
 
