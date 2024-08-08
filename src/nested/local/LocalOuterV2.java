@@ -8,6 +8,7 @@ public class LocalOuterV2 {
 
         int localVar = 1;
 
+        // 지역 클래스 또한 클래스이기 때문에 인터페이스를 구현할 수 있다.
         class LocalPrinter implements Printer {
             int value = 0;
 
