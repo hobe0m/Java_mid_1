@@ -50,6 +50,7 @@ public class LocalOuterV3 {
 
     public static void main(String[] args) {
         LocalOuterV3 localOuter = new LocalOuterV3();
+        // process 메서드를 통해 간접적으로 LocalPrinter를 생성한다.
         Printer printer = localOuter.process(2);
 
         // printer.print()를 전과 다르게 해당 위치에서 실행한다.
