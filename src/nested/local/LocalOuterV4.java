@@ -3,6 +3,8 @@ package nested.local;
 public class LocalOuterV4 {
     // 지역 클래스, 지역 변수 캡처
     // 지역 클래스가 접근하는 지역 변수는 절대로 중간에 값이 바뀌면 안된다.
+    // 따라서 final로 선언하거나 또는 사실상 final이어야 한다.
+    // 이것은 자바의 문법이고 규칙이다.
 
     private int outInstanceVar = 3;
 
