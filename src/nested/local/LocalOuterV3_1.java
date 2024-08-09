@@ -1,5 +1,7 @@
 package nested.local;
 
+import java.lang.reflect.Field;
+
 public class LocalOuterV3_1 {
     // 지역 클래스, 지역 변수 캡처
     // 지역 클래스는 지역 변수에 접근 할 수 있다.
@@ -59,5 +61,26 @@ public class LocalOuterV3_1 {
         Printer printer = localOuter.process(2);
 
         printer.print();
+
+        // 추가
+        System.out.println("필드 확인");
+
+        // 메서드 체이닝으로 확인
+        // getClass() : 클래스 정보 확인
+        // getDeclaredFields() : 클래스 내부에 선언된 필드의 정보 확인
+        Field[] fields = printer.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("field = " + field);
+        }
+
+        // 출력 결과
+        //  - field = int nested.local.LocalOuterV3_1$1LocalPrinter.value
+        //  - field = final int nested.local.LocalOuterV3_1$1LocalPrinter.val$localVar
+        //  - field = final int nested.local.LocalOuterV3_1$1LocalPrinter.val$paramVar
+        //  - field = final nested.local.LocalOuterV3_1 nested.local.LocalOuterV3_1$1LocalPrinter.this$0
+
+        // 복사된 localVar, paramVar가 캡처 변수 즉, 필드로 들어가 있는 것을 알 수 있다.
+        // 추가로 바깥 클래스를 참조하기 위한 필드도 확인할 수 있다.
+        //  - 이런 필드들은 자바가 내부에서 만들어 사용하는 필드들이다.
     }
 }
