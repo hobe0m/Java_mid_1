@@ -11,6 +11,24 @@ public class LocalOuterV3_1 {
     // 이런 과정을 변수 캡쳐(Capture)라 한다.
     // 캡쳐는 스크린 샷을 떠올리면 되고, 스크린 샷처럼 인스턴스를 생성할 때 필요한 지역 변수를 복사해서 보관해 두는 것이다.
     // 물론 모든 지역 변수를 캡쳐하는 것이 아니라 접근이 필요한 지역 변수만 캡처한다.
+    //  - 지역 클래스의 인스턴스 생성 시 접근하는 지역 변수만 캡처
+    
+    // 지역 변수 캡처 과정
+    // LocalPrint 인스턴스 생성 시도 시 지역 클래스가 접근하는 지역 변수를 확인
+    //  - LocalPrint는 paramVar, LocalVar 지역 변수에 접근
+    
+    // 사용하는 지역 변수 복사
+    //  - 지역 클래스가 사용하는 지역 변수 복사(매개 변수도 지역 변수 중 하나)
+    //  - 따라서 paramVar, localVar 복사
+
+    // 이 후 복사한 지역 변수를 인스턴스에 포함해서 생성한다.
+    //  - 따라서 복사한 지역 변수를 인스턴스를 통해 접근할 수 있는 것이다.
+
+    // 따라서 LocalPrinter 인스턴스에서 print() 메서드를 통해 paramVar, localVar에 접근 할 수 있는 것은 지역 변수에 접근하는 것이 아니라 인스턴스 내부의 복사된 캡처 변수에 접근하는 것이다.
+    // 캡처한 paramVar, localVar의 생명 주기는 LocalPrinter 인스턴스의 생명 주기와 같다.
+    //  - 따라서 LocalPrinter 인스턴스는 지역 변수의 생명 주기와 무관하게 언제든지 paramVar, localVar 캡처 변수에 접근할 수 있다.
+    //  - 이렇게 해서 지역 변수와 지역 클래스를 통해 생성한 인스턴스의 생명 주기가 다른 문제를 해결한다.
+    
     private int outInstanceVar = 3;
 
     public Printer process(int paramVar) {
