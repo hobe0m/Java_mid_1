@@ -11,6 +11,9 @@ public class LocalOuterV4 {
     // 사실상 final 지역 변수는 지역 변수에 final 키워드를 사용하지는 않았지만 값을 변경하지 않는 지역 변수를 뜻한다.
     // final 키워드를 넣지 않았을 뿐이지, 실제로는 final 키워드를 넣은 것 처럼 중간에 값을 변경하지 않은 지역 변수이다.
     // 따라서 사실상 final 지역 변수는 final 키워드를 넣어도 동일하게 작동해야 한다.
+    // 이 때, 지역 클래스가 참조하는 바깥 클래스의 지역 변수만 해당한다.
+
+    // 선언하고 한번도 값을 바꾸지 않은 것을 사실상 final이라고 한다.ㄴ
 
     private int outInstanceVar = 3;
 
@@ -32,6 +35,9 @@ public class LocalOuterV4 {
         Printer printer = new LocalPrinter();
 
         // 만약 localVar의 값을 변경한다면?
+        // 다시 캡처를 해야 하는 건가?
+
+        // 답은 컴파일 오류가 발생한다는 것이다.
         // localVar = 10;, 컴파일 오류 발생
         // localVar = 20;, 컴파일 오류 발생
 
