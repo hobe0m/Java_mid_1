@@ -31,6 +31,29 @@ public class AnonymousOuter {
 
         int localVar = 1;
 
+        /*
+        // 기존의 로컬 클래스 선언과 생성
+
+        // 선언
+        class LocalPrinter implements Printer {
+            int value = 0;
+
+            @Override
+            public void print() {
+                System.out.println("value = " + value);
+                System.out.println("localVar = " + localVar);
+                System.out.println("paramVar = " + paramVar);
+                System.out.println("outInstanceVar = " + outInstanceVar);
+            }
+        }
+
+        // 생성
+        LocalPrinter printer = new LocalPrinter();
+        */
+
+        // 익명 클래스는 생성하면서 바디를 구현
+        // 즉, 클래스의 이름과 구현하는 인터페이스를 따로 선언하지 않고 바로 구현을 하는 것
+        // 익명 클래스의 경우에는 클래스명이 없어 개수에 맞게 숫자로 표현된다.
         Printer printer = new Printer() {
             int value = 0;
 
