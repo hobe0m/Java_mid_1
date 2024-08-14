@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Ex1_1Main {
     // 코드 조각들을 전달해서 하나의 메서드에서 실행될 수 있도록 리팩토링
+    // 랜덤으로 3개의 숫자를 뽑아 출력한 뒤, 주사위의 합도 출력
 
     public static void randomDice() {
         int sum = 0;
