@@ -14,7 +14,7 @@ public class Ex1RefMainV4 {
     }
 
     public static void main(String[] args) {
-        hello( new Process() {
+        hello(new Process() {
             @Override
             public void run() {
                 int randomValue = new Random().nextInt(6) + 1;
@@ -22,7 +22,7 @@ public class Ex1RefMainV4 {
             }
         });
 
-        hello( new Process() {
+        hello(new Process() {
             @Override
             public void run() {
                 for (int i = 1; i <= 3; i++) {
