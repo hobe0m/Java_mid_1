@@ -2,7 +2,7 @@ package nested.ex;
 
 import java.util.Random;
 
-// 리팩토링 결과
+// 정적 중첩 클래스를 통한 리팩토링
 public class Ex1RefMainV1 {
     // Process process를 넣는 이유는 내부 클래스들이 모두 Process를 가지고 있기 때문이다.
     // Process는 구현하는 틀(규칙)이기에 오버라이딩을 한 메서드들은 Process를 가진다고 할 수 있다.
