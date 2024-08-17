@@ -19,10 +19,15 @@ public class Library {
         bookCount = 0;
     }
 
+    // 책을 추가할 때는 제목과 저자를 알아야 한다.
     public void addBook(String title, String author) {
+        // 현재 보유 중인 책이 도서관에서 수용할 수 있는 책의 갯수보다 적다면 도서관의 빈 칸에 새로운 책을 넣는다.
         if (bookCount < books.length) {
+            // 인덱스(현재 책의 수보다 -1)이기 때문에 책을 먼저 넣고 번호를 하나 증가시킨다.
             books[bookCount++] = new Book(title, author);
+            System.out.println("책이 저장되었습니다.");
         } else {
+            // 만약 저장 공간이 부족하면 부족하다는 메세지를 출력
             System.out.println("도서관 저장 공간이 부족합니다.");
         }
     }
@@ -34,10 +39,13 @@ public class Library {
         }
     }
 
+    // Book 클래스를 내부 정적 중첩 클래스로 생성
+    // 일부가 아닌 전혀 다른 클래스이지만 Library에서만 사용되므로 정적 중첩 클래스 사용
     private static class Book {
         private String title;
         private String author;
 
+        // 책을 생성할 때 매개 변수로 제목과 저자를 받아야 생성할 수 있게 한다.
         public Book(String title, String author) {
             this.title = title;
             this.author = author;
