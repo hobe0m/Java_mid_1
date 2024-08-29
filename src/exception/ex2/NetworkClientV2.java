@@ -31,6 +31,10 @@ public class NetworkClientV2 {
             // 예외를 발생시킨다.
             // 체크 예외이므로 예외를 처리하지 않으면 컴파일 오류가 발생한다.
             throw new NetworkClientExceptionV2("sendError", address + " 서버에 데이터 전송 실패 : " + data);
+
+            // NetworkServiceV2_4에서 활용, 중간에 다른 예외가 발생했다고 가정
+            // throw new RuntimeException("ex");, 언체크 예외이기 때문에 throws로 안던져도 된다.
+            //  - 이와 같이 잡을 수 없는 예외가 발생했을 때는 어떻게 될까?
         }
         // 전송 성공 시
         System.out.println(address + " 서버에 데이터 전송 : " + data);
