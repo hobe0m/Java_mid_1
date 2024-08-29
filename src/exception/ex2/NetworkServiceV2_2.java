@@ -1,6 +1,7 @@
 package exception.ex2;
 
 public class NetworkServiceV2_2 {
+    // 예외 복구
     public void sendMessage(String data) {
         String address = "http://example.com";
 

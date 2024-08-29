@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class MainV2 {
     public static void main(String[] args) throws NetworkClientExceptionV2 {
-        NetworkServiceV2_2 networkService = new NetworkServiceV2_2();
+        // NetworkServiceV2_1 networkService = new NetworkServiceV2_1();
+        // NetworkServiceV2_2 networkService = new NetworkServiceV2_2();
+        NetworkServiceV2_3 networkService = new NetworkServiceV2_3();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -38,5 +40,12 @@ public class MainV2 {
     // ServiceV2_2의 문제점
     // 예외 처리를 했지만 정상 흐름과 예외 흐름이 섞여 있어서 코드를 읽기 어렵다.
 
+    // 사용 후에 반드시 disconnect()를 통해 연결을 해제해야 한다.
+    
+    // V2_3
+    // ServiceV2_3가 해결한 것
+    // 정상 흐름(try)과 예외 흐름(catch)을 명확하게 구분하였다.
+
+    // ServiceV2_3의 문제점
     // 사용 후에 반드시 disconnect()를 통해 연결을 해제해야 한다.
 }
