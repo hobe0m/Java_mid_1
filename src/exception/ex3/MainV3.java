@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class MainV3 {
     public static void main(String[] args) {
         // V3_1을 사용해, 예외를 나누어 발생한 예외에 따라 다른 오류가 발생하는 것을 확인
-        NetworkServiceV3_1 networkService = new NetworkServiceV3_1();
+        // NetworkServiceV3_1 networkService = new NetworkServiceV3_1();
+        NetworkServiceV3_2 networkService = new NetworkServiceV3_2();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
