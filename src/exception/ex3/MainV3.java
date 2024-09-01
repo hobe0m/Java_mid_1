@@ -20,4 +20,5 @@ public class MainV3 {
         System.out.println("프로그램을 정상 종료합니다.");
     }
     // 실행 결과를 보면 ConnectExceptionV3, SendExceptionV3가 각각 다른 오류 메세지를 출력하는 것을 알 수 있다.
+    // 즉, 계층을 통해 나누어 둔 예외가 발생한 예외에 맞게 적용되는 것이다.
 }
