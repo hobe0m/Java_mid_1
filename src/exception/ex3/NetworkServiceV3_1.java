@@ -3,7 +3,7 @@ package exception.ex3;
 import exception.ex3.exception.ConnectExceptionV3;
 import exception.ex3.exception.SendExceptionV3;
 
-public class NetworkService3_1 {
+public class NetworkServiceV3_1 {
     public void sendMessage(String data) {
         String address = "http://example.com";
 
@@ -13,8 +13,10 @@ public class NetworkService3_1 {
         try {
             client.connect();
             client.send(data);
+            // 연결 오류 잡기
         } catch (ConnectExceptionV3 e) {
             System.out.println("[연결 오류] 주소 : " + e.getAddress() + ", 메세지 : " + e.getMessage());
+            // 전송 오류 잡기
         } catch (SendExceptionV3 e) {
             System.out.println("[전송 오류] 전송 데이터 : " + e.getSendData() + ", 메세지 : " + e.getMessage());
         } finally {
