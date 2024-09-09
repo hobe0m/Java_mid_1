@@ -1,4 +1,6 @@
-package exception.ex4;
+package exception.ex4.exception;
+
+import exception.ex4.exception.NetworkClientExceptionV4;
 
 public class ConnectExceptionV4 extends NetworkClientExceptionV4 {
 

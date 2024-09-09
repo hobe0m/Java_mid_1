@@ -1,5 +1,8 @@
 package exception.ex4;
 
+import exception.ex4.exception.ConnectExceptionV4;
+import exception.ex4.exception.SendExceptionV4;
+
 public class NetworkClientV5 implements AutoCloseable {
 
     private final String address;

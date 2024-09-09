@@ -1,5 +1,8 @@
 package exception.ex4;
 
+import exception.ex4.exception.ConnectExceptionV4;
+import exception.ex4.exception.SendExceptionV4;
+
 public class NetworkClientV4 {
 
     private final String address;
@@ -36,4 +39,6 @@ public class NetworkClientV4 {
             sendError = true;
         }
     }
+
+    // 언체크 예외이므로 throws를 사용하지 않는다.
 }
