@@ -44,4 +44,6 @@ public class NetworkServiceV5 {
     //  - 기존에는 try -> catch -> finally로 catch 이후에 자원을 반납했지만, try with resources 구문은 try 블럭이 끝나면 즉시 close()를 호출한다.
     
     // 정리
+    // 문제와 풀이
+    //  - 예외 처리 강의는 하나의 예제가 큰 흐름으로 이어지므로 예제를 처음부터 복습하면서 큰 흐름을 스스로 정리해보자.
 }
